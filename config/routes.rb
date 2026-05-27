@@ -11,4 +11,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "products#index"
+
+  # Products routing
+  # get "/products", to: "products#index"
+  # NOTE: When we see a matching GET request to "/products", it will send the request to the
+  #       ProductsController, and the index action within that controller. This is how the
+  #       request is processed and a response is generated.
+
+  resources :products
+  # This creates all of the standard CRUD routes for a particular model
 end
