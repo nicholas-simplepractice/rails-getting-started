@@ -46,7 +46,11 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    # This private method 'expects' the product parameters to match the key literals
+    #   and have the structure of a hash table/map
     def product_params
-      params.expect(product: [ :name ])
+      # This is Rails 8's cleaner replacement for the older version below:
+      # `params.require(:product).permit(:name, :description)`
+      params.expect(product: [ :name, :description ])
     end
 end

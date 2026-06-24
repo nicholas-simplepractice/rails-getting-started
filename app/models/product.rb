@@ -1,3 +1,4 @@
 class Product < ApplicationRecord
-  validates :name, presence: true, length: { minimum: 2 }
+  has_rich_text :description
+  validates :name, presence: true
 end
