@@ -51,6 +51,6 @@ class ProductsController < ApplicationController
     def product_params
       # This is Rails 8's cleaner replacement for the older version below:
       # `params.require(:product).permit(:name, :description)`
-      params.expect(product: [ :name, :description, :featured_image ])
+      params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
     end
 end
