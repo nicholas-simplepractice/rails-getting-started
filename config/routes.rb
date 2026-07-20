@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   #       ProductsController, and the index action within that controller. This is how the
   #       request is processed and a response is generated.
 
-  resources :products
   # This creates all of the standard CRUD routes for a particular model
+  resources :products do
+    resources :subscribers, only: [ :create ]
+  end
 end
