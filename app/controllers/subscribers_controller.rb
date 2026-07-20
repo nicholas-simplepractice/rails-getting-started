@@ -1,6 +1,6 @@
 # app/controllers/subscribers_controller.rb
 
-class SubscriberController < ApplicationController
+class SubscribersController < ApplicationController
   allow_unauthenticated_access
   before_action :set_product
 
